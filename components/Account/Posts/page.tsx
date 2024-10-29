@@ -10,6 +10,7 @@ import {
       VideoCameraIcon
 
 } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 const ReactQuill = dynamic(() => import('react-quill'), {
       ssr: false,
       loading: () => <p>Loading ...</p>,
@@ -83,9 +84,9 @@ const Posts = () => {
             <div className="">
                   <div className="flex items-center space-x-4 mb-4">
                         {avatarUrl ? (
-                              <img src={avatarUrl} alt={firstName} className="w-10 h-10 rounded-full" />
+                              <Image src={avatarUrl} alt={firstName} className="w-10 h-10 rounded-full" />
                         ) : (
-                              <img src="images/07.jpg" alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" />
+                              <Image src="images/07.jpg" alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" />
                         )}
 
                         <ReactQuill
@@ -154,7 +155,7 @@ const Posts = () => {
                   </div>
                   {selectedImage && (
                         <div className="mt-4 relative">
-                              <img src={selectedImage} alt="Selected" className="w-full h-auto rounded-lg" />
+                              <Image src={selectedImage} alt="Selected" className="w-full h-auto rounded-lg" />
                               <button
                                     onClick={handleRemoveImage}
                                     className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full hover:bg-red-600"

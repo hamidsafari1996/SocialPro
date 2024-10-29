@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 // import { useSession } from "next-auth/react";
 // import { useRouter } from 'next/navigation';  // For redirection
 import AccountTab from '@/components/Tabs/AccountTab';
@@ -68,13 +69,12 @@ export default function Settings() {
                 onClick={() => setActiveTab(tab.id)}
               >
                 <span className='text-center whitespace-nowrap overflow-hidden text-ellipsis transition-transform duration-300 ease-in-out group-hover:scale-110'>{tab.label}</span>
-                <img src={tab.imageSrc} alt={tab.label} className='w-5 mt-3 transition-transform duration-300 ease-in-out group-hover:scale-110' />
+                <Image src={tab.imageSrc} alt={tab.label} className='w-5 mt-3 transition-transform duration-300 ease-in-out group-hover:scale-110' />
               </button>
             </li>
           ))}
         </ul>
       </div>
-
       {/* Tab content */}
       <div className="flex-1 bg-white p-8 shadow-lg mt-4 rounded-lg mb-11">
         {tabContent[activeTab]}

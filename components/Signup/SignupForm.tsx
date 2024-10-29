@@ -55,7 +55,7 @@ export default function SignupForm() {
                                           className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
                                     <p className="text-xs text-gray-500 mt-1">
-                                          We'll never share your email with anyone else.
+                                          We&apos;ll never share your email with anyone else.
                                     </p>
                               </div>
                               <div className="relative">

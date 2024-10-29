@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import Image from 'next/image';
 
 import {
       HeartIcon,
@@ -53,7 +54,7 @@ const Post: React.FC = () => {
                   {posts.map((post) => (
                               <div key={post.id} className="bg-white rounded-lg shadow-sm p-4 mb-4">
                                     <div className="flex items-center">
-                                          <img
+                                          <Image
                                                 src={post.logo}
                                                 alt={post.title}
                                                 className="w-12 h-12 rounded-full object-cover mr-4"
@@ -94,7 +95,7 @@ const Post: React.FC = () => {
                                     </div>
 
                                     <div className="mt-4">
-                                          <img
+                                          <Image
                                                 src={post.featured_image}
                                                 alt={post.title}
                                                 className="w-full h-auto rounded-lg object-cover"

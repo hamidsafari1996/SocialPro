@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import Image from 'next/image';
 import {
       Bars3BottomLeftIcon
 } from '@heroicons/react/16/solid';
@@ -34,7 +35,7 @@ const RightSidebar = () => {
                               {users.map((user, index) => (
                                     <li key={index} className="py-1 bg-white text-black rounded">
                                           <a href="" className='flex items-center'>
-                                                <img
+                                                <Image
                                                 src={user.image}
                                                 alt={user.name}
                                                 className="h-10 w-10 rounded-full ease-out duration-300 flex-shrink-0 object-cover mr-3"

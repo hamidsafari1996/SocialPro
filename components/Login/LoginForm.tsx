@@ -31,7 +31,7 @@ export default function LoginForm() {
                         <h1 className="text-2xl font-bold text-center mb-4">Sign in</h1>
                         <div className="flex justify-center space-x-2 text-sm mb-6">
                               <p className="text-center ">
-                                    Don't have an account?{" "}
+                                    Don&apos;t have an account?{" "}
                               </p>
                               <div className="text-blue-500 hover:underline">
                                     <Link href="/signup">

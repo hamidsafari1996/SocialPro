@@ -27,7 +27,7 @@ export default function ConnectionSettings() {
               <ChevronDownIcon className="size-5 fill-black/60 group-data-[open]:rotate-180" />
             </DisclosureButton>
             <DisclosurePanel className="mt-2 p-3 text-sm/5 text-black/50 text-left border-b">
-              If you're unhappy with your purchase, we'll refund you in full.
+              If you&apos;re unhappy with your purchase, we&apos;ll refund you in full.
             </DisclosurePanel>
           </Disclosure>
           <Disclosure as="div" className="">

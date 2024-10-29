@@ -35,7 +35,7 @@ export default function DeleteAccount() {
             className="form-checkbox h-5 w-5 text-blue-600"
           />
           <span className="text-sm text-gray-700">
-            Yes, I'd like to delete my account
+          Yes, I&apos;d like to delete my account
           </span>
         </label>
       </div>

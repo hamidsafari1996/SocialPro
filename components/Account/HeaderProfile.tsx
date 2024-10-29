@@ -8,7 +8,7 @@ import {
       PencilSquareIcon
 
 } from '@heroicons/react/24/outline';
-import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const HeaderProfile = () => {
       const { firstName, lastName, avatarUrl, userAdditional, userName, userBirthday, allowAdd, phone, email, overview, location, imageUrl } = useDataContext();
@@ -26,9 +26,9 @@ const HeaderProfile = () => {
                         <div className="flex items-end space-x-4 justify-between px-5 pb-7 -mt-14">
                               <div className="flex items-end">
                                     {avatarUrl ? (
-                                          <img src={avatarUrl} alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" />
+                                          <Image src={avatarUrl} alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" />
                                     ) : (
-                                          <img src="images/07.jpg" alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" />
+                                          <Image src="images/07.jpg" alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" />
                                     )}
                                     <div className="ml-5">
                                           <h1 className="text-lg font-bold text-left">{firstName} {lastName}</h1>

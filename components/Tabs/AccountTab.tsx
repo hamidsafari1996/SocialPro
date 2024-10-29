@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import ReactDOMServer from 'react-dom/server';
 import { useDataContext } from '../../contexts/UserContext';  // Import the context
 import ChangePasswordForm from './ChangePasswordForm.tsx';  // Importing the ChangePasswordForm component
-import { useRouter } from 'next/router';
 import Swal, { SweetAlertResult } from 'sweetalert2';  // Import SweetAlert2
+import Image from 'next/image';
 import {
       HandThumbUpIcon
 } from '@heroicons/react/24/solid';
@@ -142,7 +142,7 @@ export default function AccountTab() {
                   <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="flex items-center space-x-4">
                               {avatarPreview ? (
-                                    <img src={avatarPreview} alt="Avatar" className="w-16 h-16 rounded-full object-cover" />
+                                    <Image src={avatarPreview} alt="Avatar" className="w-16 h-16 rounded-full object-cover" />
                               ) : (
                                     <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
                                           <span className="text-gray-500">No Avatar</span>
@@ -162,7 +162,7 @@ export default function AccountTab() {
                         {/* Image Upload */}
                         <div className="flex items-center space-x-4">
                               {imagePreview ? (
-                                    <img src={imagePreview} alt="Uploaded" className="w-16 h-16 object-cover rounded-md" />
+                                    <Image src={imagePreview} alt="Uploaded" className="w-16 h-16 object-cover rounded-md" />
                               ) : (
                                     <div className="w-16 h-16 bg-gray-300 rounded-md flex items-center justify-center">
                                           <span className="text-gray-500">No Image</span>

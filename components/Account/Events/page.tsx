@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Image from 'next/image';
 import {
   XMarkIcon,
   CalendarIcon,
@@ -195,7 +195,7 @@ const Events = () => {
       {/* Event card */}
       <div className="flex items-center bg-white p-4 rounded-lg">
         {/* Event image */}
-        <img
+        <Image
           src="/images/event.jpg"
           alt="Event"
           className="w-16 h-16 rounded-lg mr-4"
