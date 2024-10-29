@@ -69,7 +69,7 @@ export default function Settings() {
                 onClick={() => setActiveTab(tab.id)}
               >
                 <span className='text-center whitespace-nowrap overflow-hidden text-ellipsis transition-transform duration-300 ease-in-out group-hover:scale-110'>{tab.label}</span>
-                <Image src={tab.imageSrc} alt={tab.label} className='w-5 mt-3 transition-transform duration-300 ease-in-out group-hover:scale-110' />
+                <Image src={tab.imageSrc} alt={tab.label} className='w-5 mt-3 transition-transform duration-300 ease-in-out group-hover:scale-110' width={800} height={800} />
               </button>
             </li>
           ))}

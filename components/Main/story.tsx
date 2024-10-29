@@ -206,7 +206,7 @@ const StoryBar: React.FC = () => {
           <SwiperSlide key={story.id}>
             <div className="flex flex-col items-center" onClick={() => openStory(index)}>
               <div className={`w-20 h-20 rounded-full overflow-hidden cursor-pointer border-2 ${story.viewed ? 'border-gray-300' : 'border-blue-500'}`}>
-                <Image src={story.logo} alt={story.title} className="w-full h-full border-2 border-white border-solid rounded-full object-cover" />
+                <Image src={story.logo} alt={story.title} className="w-full h-full border-2 border-white border-solid rounded-full object-cover" width={800} height={800}/>
               </div>
               <p className="text-sm mt-2 text-nowrap text-ellipsis line-clamp-3 w-20 text-gray-700">
                 <span className="whitespace-nowrap">{story.title}</span>
@@ -248,12 +248,12 @@ const StoryBar: React.FC = () => {
               {stories[selectedStoryIndex]?.images.map((image: string, idx: number) => (
                 <SwiperSlide key={idx}>
                   <div className="relative w-screen h-screen">
-                    {/* آیکون و نام کاربر */}
                     <div className="absolute top-4 left-4 flex items-center space-x-2 z-50">
                       <Image
-                        src={stories[selectedStoryIndex]?.logo} // استفاده از story.logo
-                        alt={`${stories[selectedStoryIndex]?.title} logo`} // استفاده از story.title
+                        src={stories[selectedStoryIndex]?.logo}
+                        alt={`${stories[selectedStoryIndex]?.title} logo`}
                         className="w-10 h-10 rounded-full object-cover"
+                        width={800} height={800}
                       />
                       <div className="flex flex-col justify-start">
                         <span className="text-white font-semibold text-lg text-left">
@@ -266,7 +266,7 @@ const StoryBar: React.FC = () => {
 
                     </div>
                     <div className="flex items-center justify-center w-screen h-screen">
-                      <Image src={image} alt={`Story ${idx}`} className="h-full object-cover" />
+                      <Image src={image} alt={`Story ${idx}`} className="h-full object-cover" width={800} height={800}/>
                     </div>
                   </div>
                 </SwiperSlide>

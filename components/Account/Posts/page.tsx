@@ -84,9 +84,9 @@ const Posts = () => {
             <div className="">
                   <div className="flex items-center space-x-4 mb-4">
                         {avatarUrl ? (
-                              <Image src={avatarUrl} alt={firstName} className="w-10 h-10 rounded-full" />
+                              <Image src={avatarUrl} alt={firstName} className="w-10 h-10 rounded-full" width={800} height={800}/>
                         ) : (
-                              <Image src="images/07.jpg" alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" />
+                              <Image src="images/07.jpg" alt={firstName} className="w-32 h-32 rounded-full border-4 border-white" width={800} height={800}/>
                         )}
 
                         <ReactQuill
@@ -155,7 +155,7 @@ const Posts = () => {
                   </div>
                   {selectedImage && (
                         <div className="mt-4 relative">
-                              <Image src={selectedImage} alt="Selected" className="w-full h-auto rounded-lg" />
+                              <Image src={selectedImage} alt="Selected" className="w-full h-auto rounded-lg" width={800} height={800}/>
                               <button
                                     onClick={handleRemoveImage}
                                     className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full hover:bg-red-600"

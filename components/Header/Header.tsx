@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           <Link href="/">
             <div className="m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <Image alt="" src="images/cart.png" className="h-8 w-auto" />
+              <Image alt="" src="/images/cart.png" className="h-8 w-auto" width={800} height={800}/>
             </div>
           </Link>
         </div>

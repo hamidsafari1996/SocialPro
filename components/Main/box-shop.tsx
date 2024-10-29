@@ -58,6 +58,7 @@ const Post: React.FC = () => {
                                                 src={post.logo}
                                                 alt={post.title}
                                                 className="w-12 h-12 rounded-full object-cover mr-4"
+                                                width={800} height={800}
                                           />
                                           <div className="flex flex-col">
                                                 <span className="font-bold text-left">{post.title}</span>
@@ -99,6 +100,7 @@ const Post: React.FC = () => {
                                                 src={post.featured_image}
                                                 alt={post.title}
                                                 className="w-full h-auto rounded-lg object-cover"
+                                                width={800} height={800}
                                           />
                                     </div>
 

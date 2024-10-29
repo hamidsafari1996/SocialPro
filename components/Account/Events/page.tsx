@@ -199,6 +199,7 @@ const Events = () => {
           src="/images/event.jpg"
           alt="Event"
           className="w-16 h-16 rounded-lg mr-4"
+          width={800} height={800}
         />
         {/* Event details */}
         <div className="flex-1">

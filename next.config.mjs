@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-      eslint: {
-        ignoreDuringBuilds: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'nextproject.local',
+        port: '', // اگر پورتی وجود ندارد، خالی بگذارید
+        pathname: '/wp-content/uploads/**',
       },
-    };
-    
-    export default nextConfig;
+    ],
+  },
+};
+
+export default nextConfig;

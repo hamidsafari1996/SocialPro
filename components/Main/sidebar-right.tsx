@@ -39,6 +39,7 @@ const RightSidebar = () => {
                                                 src={user.image}
                                                 alt={user.name}
                                                 className="h-10 w-10 rounded-full ease-out duration-300 flex-shrink-0 object-cover mr-3"
+                                                width={800} height={800}
                                                 />
                                                 <span className='font-semibold hover:text-blue-600 whitespace-nowrap transition-all duration-500 overflow-hidden opacity-100'>{user.name}</span>
                                           </a>
