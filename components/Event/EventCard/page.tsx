@@ -1,6 +1,6 @@
 import React from "react";
 import { Event } from "../../../types/types";
-
+import Image from 'next/image';
 interface EventCardProps {
   event: Event;
 }
@@ -8,7 +8,7 @@ interface EventCardProps {
 export const EventCard: React.FC<{ event: any }> = ({ event }) => {
   return (
     <div className="event-card border rounded-lg p-4 mb-4 shadow-lg">
-      <img src={event.image} alt={event.title} className="w-full h-48 object-cover rounded-md" />
+      <Image src={event.image} alt={event.title} className="w-full h-48 object-cover rounded-md" />
       <div className="p-2">
         <span className="badge bg-blue-500 text-white text-xs px-2 py-1 rounded-full">{event.category}</span>
         <h3 className="font-semibold text-lg mt-2">{event.title}</h3>
