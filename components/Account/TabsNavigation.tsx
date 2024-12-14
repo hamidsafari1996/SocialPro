@@ -6,7 +6,7 @@ import Events from './Events/page';
 import About from './About/page';
 
 const TabsNavigation = () => {
-      const [activeTab, setActiveTab] = useState('Posts');  // مدیریت تب فعال
+      const [activeTab, setActiveTab] = useState('Posts');
 
       const tabs = [
             { name: 'Posts', component: <Posts /> },

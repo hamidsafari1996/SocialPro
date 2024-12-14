@@ -25,15 +25,15 @@ const Stories = () => {
   const [visibleEvents, setVisibleEvents] = useState<number[]>(events.map(event => event.id));
   // Function to hide the upcoming event when the close button is clicked
   const handleCloseUpcomingEvent = (id: number) => {
-    setVisibleEvents(prevState => prevState.filter(eventId => eventId !== id)); // مخفی کردن رویداد با id مربوطه
+    setVisibleEvents(prevState => prevState.filter(eventId => eventId !== id));
   };
   
   
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
-      const filesArray = Array.from(event.target.files); // تبدیل به آرایه از فایل‌ها
-      setSelectedImages(filesArray); // ذخیره فایل‌های انتخاب‌شده
+      const filesArray = Array.from(event.target.files);
+      setSelectedImages(filesArray);
     }
   };
 

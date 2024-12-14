@@ -27,7 +27,6 @@ export default function AccountTab() {
       const [avatarPreview, setAvatarPreview] = useState<string | null>(avatarUrl);
       const [imagePreview, setImagePreview] = useState<string | null>(imageUrl);
 
-      // هنگام بارگذاری اولیه، inputها را با مقادیر Context مقداردهی کن
       useEffect(() => {
             setFirstNameInput(firstName);
             setLastNameInput(lastName);
@@ -107,7 +106,6 @@ export default function AccountTab() {
                   timer: 2000,
                   timerProgressBar: true,
                   didOpen: () => {
-                        // نیازی به `showLoading()` نیست، زیرا ما از HTML و آیکون استفاده می‌کنیم
                         const timer = Swal.getHtmlContainer()?.querySelector('b');
                         timerInterval = setInterval(() => {
                               if (timer) {

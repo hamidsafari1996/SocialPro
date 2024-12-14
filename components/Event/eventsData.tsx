@@ -16,6 +16,5 @@ export const eventsData = [
         category: "Photography Workshop",
         image: "/images/event2.jpg",
       },
-      // بقیه رویدادها...
     ];
     

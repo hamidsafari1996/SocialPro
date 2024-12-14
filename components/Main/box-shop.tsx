@@ -32,11 +32,11 @@ const Post: React.FC = () => {
 
                         const formattedPosts = data.map((post: any) => ({
                               id: post.id,
-                              title: post.title.rendered, // عنوان پست
-                              excerpt: post.content.rendered || '', // توضیحات کوتاه پست
-                              subtitle: post.subtitle || '', // زیرعنوان پست (اگر وجود دارد)
-                              featured_image: post.featured_image_src || '', // تصویر شاخص پست
-                              logo: post.post_logo || '', // لوگوی پست (اگر وجود دارد)
+                              title: post.title.rendered,
+                              excerpt: post.content.rendered || '',
+                              subtitle: post.subtitle || '',
+                              featured_image: post.featured_image_src || '',
+                              logo: post.post_logo || '',
                         }));
                         setPosts(formattedPosts);
                   } catch (error) {

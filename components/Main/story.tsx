@@ -52,7 +52,7 @@ const StoryBar: React.FC = () => {
           title: story.title.rendered,
           images: Object.values(story.gallery_images || {}),
           logo: story.featured_image_src,
-          date: story.date,  // دریافت تاریخ انتشار
+          date: story.date,
           viewed: false,
         }));
         setStories(formattedStories);
@@ -85,7 +85,6 @@ const StoryBar: React.FC = () => {
       } else {
         console.log("Moving to next story");
 
-        // اضافه کردن پرچم برای جلوگیری از اجرای دوباره
         if (!swiperRef.current.animating) {
           setSelectedStoryIndex(prevIndex => (prevIndex !== null ? prevIndex + 1 : null));
           setCurrentSlideIndex(0); // Move to the first slide of the next story
@@ -100,7 +99,6 @@ const StoryBar: React.FC = () => {
     setProgress(0); // Reset the progress bar for the new slide
   }, [selectedStoryIndex, currentSlideIndex, stories]);
 
-  // استفاده از useEffect برای نظارت بر تغییر selectedStoryIndex
   useEffect(() => {
     if (selectedStoryIndex !== null && swiperRef.current) {
       swiperRef.current.slideTo(0);
@@ -236,7 +234,7 @@ const StoryBar: React.FC = () => {
               }}
               modules={[A11y]}
               initialSlide={currentSlideIndex}
-              slidesPerView={1} // فقط یک اسلاید در هر بار نمایش داده شود
+              slidesPerView={1}
               grabCursor={true}
               onSlideChange={(swiper) => {
                 console.log("Slide changed to:", swiper.activeIndex);

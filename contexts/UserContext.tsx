@@ -14,7 +14,7 @@ interface DataContextType {
   email: string;
   overview: string;
   location: string;
-  avatarUrl: string | null;  // اضافه کردن URL آواتار
+  avatarUrl: string | null;
   imageUrl: string | null;
 
   setFirstName: (name: string) => void;
@@ -47,7 +47,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [location, setLocation] = useState<string>('');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
-  // استفاده از useEffect برای خواندن اطلاعات از Local Storage
   useEffect(() => {
     const savedFirstName = localStorage.getItem('firstName');
     const savedLastName = localStorage.getItem('lastName');

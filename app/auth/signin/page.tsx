@@ -1,4 +1,4 @@
-"use client";  // این صفحه کلاینت‌ساید است
+"use client";
 
 import { signIn } from "next-auth/react";
 import { useState } from 'react';
@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 export default function SignIn() {
       const [error, setError] = useState("");
       const router = useRouter();
-      // اینجا از useRouter استفاده می‌کنیم
 
       const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             e.preventDefault();
@@ -15,13 +14,12 @@ export default function SignIn() {
             const password = (e.currentTarget.elements.namedItem('password') as HTMLInputElement).value;
 
             const result = await signIn("credentials", {
-                  redirect: false,  // از redirect: false استفاده می‌کنیم
+                  redirect: false,
                   username,
                   password,
             });
             console.log("Login result:", result);
             if (result?.ok) {
-                  // اگر ورود موفقیت آمیز بود، کاربر به صفحه تنظیمات هدایت می‌شود
                   router.push("/settings");
             } else {
                   setError("Invalid username or password");

@@ -72,7 +72,7 @@ export default function SignupForm() {
                                           onClick={() => setShowPassword(!showPassword)}
                                           className="absolute inset-y-0 right-3 flex items-center text-gray-500"
                                     >
-                                          {/* آیکون چشم برای نمایش یا مخفی کردن رمز */}
+
                                           {showPassword ? (
                                                 <svg
                                                       className="w-5 h-5"

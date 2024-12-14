@@ -57,9 +57,9 @@ const Posts = () => {
                   const file = event.target.files[0];
                   const reader = new FileReader();
                   reader.onloadend = () => {
-                        setSelectedVideo(reader.result as string); // ذخیره URL ویدیو
+                        setSelectedVideo(reader.result as string);
                   };
-                  reader.readAsDataURL(file); // تبدیل ویدیو به URL
+                  reader.readAsDataURL(file);
             }
       };
 
