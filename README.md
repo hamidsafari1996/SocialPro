@@ -21,7 +21,7 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/hamidsafari1996/SocialPro.git
    cd SocialPro
-```
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
