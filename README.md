@@ -21,6 +21,8 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/hamidsafari1996/SocialPro.git
    cd SocialPro
+   npm install
+   npm run dev
     ```
 ## Setting Up WordPress
 To use WordPress as the CMS for this project, follow these steps:
