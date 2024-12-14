@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 interface HeaderProps {
-  toggleSidebar: () => void; // تعریف prop برای تابع toggleSidebar
+  toggleSidebar: () => void;
 }
 const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
