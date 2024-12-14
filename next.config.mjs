@@ -5,7 +5,7 @@ const nextConfig = {
       {
         protocol: 'http',
         hostname: 'nextproject.local',
-        port: '', // اگر پورتی وجود ندارد، خالی بگذارید
+        port: '',
         pathname: '/wp-content/uploads/**',
       },
     ],
