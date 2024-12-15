@@ -59,3 +59,5 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Contact
 Hamid Safari - [LinkedIn](https://linkedin.com/in/hamidsafari)
+
+![Screenshot 2024-12-15 at 13-20-46 ](https://github.com/user-attachments/assets/cb29cfd6-c9ee-4bd2-9461-38c8588e7ddf)
