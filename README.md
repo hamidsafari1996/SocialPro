@@ -7,7 +7,7 @@ A modern, scalable, and dynamic website built with Next.js, TypeScript, and Word
 - [Next.js](https://nextjs.org/) - React Framework for Production
 - [TypeScript](https://www.typescriptlang.org/) - Strongly Typed JavaScript
 - [WordPress](https://wordpress.org/) - Content Management System
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS Framework (if used)
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS Framework
 
 ## Getting Started
 To run this project locally, follow these steps:
