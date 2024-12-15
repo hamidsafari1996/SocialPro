@@ -21,7 +21,7 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/hamidsafari1996/SocialPro.git
    cd SocialPro
-    ```
+```
 ## Setting Up WordPress
 To use WordPress as the CMS for this project, follow these steps:
 #### Step 1: Download WordPress
@@ -36,13 +36,13 @@ To run WordPress locally, you can use one of the following tools:
 
 After installing any of these tools, follow their instructions to create a new local server environment.
 #### Step 3: Install WordPress
-    ```bash
+   ```bash
 1. Extract the downloaded WordPress files into the `htdocs` folder (XAMPP) or the root directory of your chosen server.
 2. Open your browser and navigate to `http://localhost/your-folder-name`.
 3. Follow the on-screen instructions to set up WordPress.
 4. Create a new database in your local server (e.g., using phpMyAdmin).
 5. During setup, enter the database name, username, password, and host (`localhost` for local servers).
-    ```
+```
 
 ### Step 5: Configure API in the Project
 Update the environment variables in the `story.tsx`, `box-shop.tsx`, file to connect your Next.js application with your WordPress installation.
