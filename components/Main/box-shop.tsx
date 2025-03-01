@@ -1,42 +1,50 @@
-"use client";
+"use client"; // Marks this as a client-side component
+
+// Import necessary dependencies
 import React, { useEffect, useState } from "react";
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
+import BlogSkeleton from "@/components/Placeholders/BlogSkeleton";
 
-import {
-      HeartIcon,
-      ChatBubbleOvalLeftIcon,
-      ShareIcon,
-      PaperAirplaneIcon,
-      EllipsisHorizontalIcon
-} from '@heroicons/react/24/outline';
-
+// TypeScript interface defining the structure of a post
 interface Post {
       id: number;
       title: string;
-      excerpt: string;
+      excerpt: { rendered: string };    // WordPress rendered excerpt
       subtitle: string;
-      featured_image: string;
-      logo: string;
+      featured_image: string;           // URL for the post's featured image
+      author_avatar: string;            // URL for author's avatar
+      logo: string;                     // Post logo URL
+      slug: string;                     // URL-friendly post identifier
+      category?: string;                // Optional category name
+      author_name?: string;             // Optional author name
 }
 
+// Post component for displaying blog posts/shop items
 const Post: React.FC = () => {
+      // State to store fetched posts
       const [posts, setPosts] = useState<Post[]>([]);
 
-      // Fetch posts from API
+      // Effect hook to fetch posts when component mounts
       useEffect(() => {
             const fetchPosts = async () => {
                   try {
+                        // Fetch posts from WordPress API
                         const response = await fetch('http://nextproject.local/wp-json/wp/v2/posts');
                         const data = await response.json();
 
+                        // Transform API data into our Post interface format
                         const formattedPosts = data.map((post: any) => ({
                               id: post.id,
                               title: post.title.rendered,
-                              excerpt: post.content.rendered || '',
+                              excerpt: typeof post.excerpt === "object" ? post.excerpt.rendered : post.excerpt || '',
+                              slug: post.slug,
                               subtitle: post.subtitle || '',
                               featured_image: post.featured_image_src || '',
                               logo: post.post_logo || '',
+                              category: post.category_name || '',
+                              author_avatar: post.author_avatar || '',
+                              author_name: post.author_name || '',
                         }));
                         setPosts(formattedPosts);
                   } catch (error) {
@@ -45,90 +53,67 @@ const Post: React.FC = () => {
             };
 
             fetchPosts();
-      }, []);
+      }, []); // Empty dependency array means this runs once on mount
 
+      // Show loading skeleton while posts are being fetched
+      if (posts.length === 0) {
+            return <BlogSkeleton />;
+      }
 
+      // Render posts list
       return (
             <>
                   <div className="mt-16">
-                  {posts.map((post) => (
+                  {posts.map((post, index) => (
+                              // Individual post card
                               <div key={post.id} className="bg-white rounded-lg shadow-sm p-4 mb-4">
+                                    <Link href={`/post/${post.slug}`} className="text-blue-600">
+                                    {/* Author info section */}
                                     <div className="flex items-center">
                                           <Image
-                                                src={post.logo}
+                                                src={post.author_avatar}
                                                 alt={post.title}
                                                 className="w-12 h-12 rounded-full object-cover mr-4"
-                                                width={800} height={800}
+                                                width={48} 
+                                                height={48}
                                           />
                                           <div className="flex flex-col">
-                                                <span className="font-bold text-left">{post.title}</span>
-                                                <span className="text-sm text-gray-500 text-left">{post.subtitle}</span>
-                                                {/* <span className="text-xs text-gray-400 text-left">{post.time}hr</span> */}
+                                                <span className="text-left inline-block text-xs text-gray-500 rounded-full">{post.category}</span>
+                                                <span className="font-bold text-lg text-left text-gray-900">{post.title}</span>
                                           </div>
-                                          <Menu as="div" className="relative inline-block ml-auto">
-                                                <div>
-                                                      <MenuButton className="text-gray-500 hover:text-gray-700">
-                                                            <EllipsisHorizontalIcon className="w-10 h-10 bg-slate-100 p-2.5 rounded-full hover:bg-blue-600 ease-out duration-300 hover:text-white text-slate-900 flex-shrink-0" />
-                                                      </MenuButton>
-                                                </div>
-                                                <MenuItems
-                                                      className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
-                                                >
-                                                      <div className="py-1">
-                                                            <MenuItem>
-                                                                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                                                        Account settings
-                                                                  </a>
-                                                            </MenuItem>
-                                                            <MenuItem>
-                                                                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                                                        Support
-                                                                  </a>
-                                                            </MenuItem>
-                                                            <MenuItem>
-                                                                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-                                                                        License
-                                                                  </a>
-                                                            </MenuItem>
-                                                      </div>
-                                                </MenuItems>
-                                          </Menu>
                                     </div>
 
+                                    {/* Featured image section */}
                                     <div className="mt-4">
-                                          <Image
-                                                src={post.featured_image}
-                                                alt={post.title}
-                                                className="w-full h-auto rounded-lg object-cover"
-                                                width={800} height={800}
-                                          />
+                                    {post.featured_image && (
+                                          index === 0 ? (
+                                                <Image
+                                                      src={post.featured_image}
+                                                      alt={post.title}
+                                                      className="rounded-lg object-cover"
+                                                      priority
+                                                      width={800} 
+                                                      height={800}
+                                                      sizes="(max-width: 768px) 100vw, 800px"
+                                                />
+                                          ) : (
+                                                <Image
+                                                      src={post.featured_image}
+                                                      alt={post.title}
+                                                      className="rounded-lg object-cover"
+                                                      width={800} 
+                                                      height={800}
+                                                      sizes="(max-width: 768px) 100vw, 800px"
+                                                />
+                                          )
+                                    )}
                                     </div>
 
+                                    {/* Post excerpt section */}
                                     <div className="mt-4">
                                           <p className="text-gray-700 text-left" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
                                     </div>
-
-                                    <div className="mt-4 flex justify-between items-center border-t pt-2">
-                                          <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-500">
-                                                <HeartIcon className="w-10 h-10 bg-slate-100 p-2.5 rounded-full hover:bg-blue-600 ease-out duration-300 hover:text-white text-slate-900 flex-shrink-0" />
-                                                <span>Liked (56)</span>
-                                          </button>
-
-                                          <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-500">
-                                                <ChatBubbleOvalLeftIcon className="w-10 h-10 bg-slate-100 p-2.5 rounded-full hover:bg-blue-600 ease-out duration-300 hover:text-white text-slate-900 flex-shrink-0" />
-                                                <span>Comments (12)</span>
-                                          </button>
-
-                                          <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-500">
-                                                <ShareIcon className="w-10 h-10 bg-slate-100 p-2.5 rounded-full hover:bg-blue-600 ease-out duration-300 hover:text-white text-slate-900 flex-shrink-0" />
-                                                <span>Share (3)</span>
-                                          </button>
-
-                                          <button className="flex items-center space-x-2 text-gray-500 hover:text-blue-500">
-                                                <PaperAirplaneIcon className="w-10 h-10 bg-slate-100 p-2.5 rounded-full hover:bg-blue-600 ease-out duration-300 hover:text-white text-slate-900 flex-shrink-0" />
-                                                <span>Send</span>
-                                          </button>
-                                    </div>
+                                    </Link>
                               </div>
                         ))}
                   </div>
