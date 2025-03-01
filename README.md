@@ -62,7 +62,6 @@ Hamid Safari - [LinkedIn](https://linkedin.com/in/hamidsafari)
 
 ## Image
 
-![Screenshot 2024-12-15 at 13-20-46 ](https://github.com/user-attachments/assets/cb29cfd6-c9ee-4bd2-9461-38c8588e7ddf)
+![Screenshot 2025-02-25 at 14-57-28 ](https://github.com/user-attachments/assets/35d1cc91-71a5-45cc-adc7-f3eef2ce5e94)
 
-
-![Screenshot 2024-12-15 at 13-21-02 ](https://github.com/user-attachments/assets/610f7937-c647-434a-bee8-aa048d42af1c)
+![Screenshot 2025-02-25 at 14-56-30 ](https://github.com/user-attachments/assets/ab1568c5-112f-4e80-81fc-605a1123915d)
