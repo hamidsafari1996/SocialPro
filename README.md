@@ -46,11 +46,14 @@ After installing any of these tools, follow their instructions to create a new l
 5. During setup, enter the database name, username, password, and host (`localhost` for local servers).
 
 
-### Step 5: Configure API in the Project
+#### Step 5: Configure API in the Project
 Update the environment variables in the `story.tsx`, `box-shop.tsx`, file to connect your Next.js application with your WordPress installation.
 
 Example `components/Main/story.tsx`,
 Example `components/Main/box-shop.tsx`
+
+Download the storie-next-wp plugin from this link, and upload it to your WordPress plugins section. For instructions on how to use this plugin, please visit its documentation page.
+`https://github.com/hamidsafari1996/storie-next-wp`
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
